@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button {
+  width: 100px;
+  border: none;
+  padding: 16px;
+  background-color: crimson;
+  color: white;
+  cursor: pointer;
+}
+
+.button:disabled {
+  background-color: rgba(220, 20, 60, 0.473);
+  cursor: not-allowed;
+}
+
+.button:hover {
+  background-color: crimson;
+  color: white;
+  transition: 0.3s;
+  transform: scale(1.05);
+  box-shadow: 0px 0px 10px rgba(220, 20, 60, 0.473);
+}
