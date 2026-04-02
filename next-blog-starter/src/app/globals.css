@@ -76,7 +76,8 @@ a {
     max-width: 475px;
   }
 }
-
+/* 
+ styles for the editor */
 .ql-container {
   font-size: 28px !important;
 }
