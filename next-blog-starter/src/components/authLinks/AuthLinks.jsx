@@ -27,7 +27,13 @@ const AuthLinks = () => {
           <Link href="/write" className={styles.link}>
             Write
           </Link>
-          <span className={styles.link} onClick={() => signOut()}>
+          <span
+            className={styles.link}
+            onClick={() => {
+              signOut();
+              router.push("/");
+            }}
+          >
             Logout
           </span>
         </>
@@ -47,7 +53,13 @@ const AuthLinks = () => {
           ) : (
             <>
               <Link href="/write">Write</Link>
-              <span className={styles.link} onClick={() => signOut()}>
+              <span
+                className={styles.link}
+                onClick={() => {
+                  signOut();
+                  router.push("/");
+                }}
+              >
                 Logout
               </span>
             </>
