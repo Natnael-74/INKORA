@@ -8,7 +8,7 @@ const getData = async () => {
   });
 
   if (!res.ok) {
-    throw new Error("Failed");
+    throw new Error("Failed to load categories");
   }
 
   return res.json();
@@ -16,6 +16,7 @@ const getData = async () => {
 
 const CategoryList = async () => {
   const data = await getData();
+
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Popular Categories</h1>
