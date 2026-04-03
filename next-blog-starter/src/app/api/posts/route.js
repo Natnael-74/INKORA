@@ -1,7 +1,16 @@
 import { NextResponse } from "next/server";
 
-export async function GET() {
+export async function GET(req) {
   try {
+    const POSTS_PER_PAGE = 3;
+    const { searchParams } = new URL(req.url);
+    const category = searchParams.get("category");
+    const page = Number(searchParams.get("page")) || 1;
+    const limit = Number(searchParams.get("limit")) || 3;
+
+    const startIndex = (page - 1) * limit;
+    const endIndex = page * limit;
+
     const res = await fetch(`${process.env.LOCAL_MONGO_DB}/posts`);
     const data = await res.json();
 

@@ -52,6 +52,7 @@ const SinglePage = async ({ params }) => {
         <div className={styles.post}>
           <div
             className={styles.description}
+            //  dangerouslySetInnerHTML is used to render HTML content from the post description. It allows the description to include HTML tags and formatting used in the original post content. The substring(0, 60) is used to show the text formatted in the React Quill editor .
             dangerouslySetInnerHTML={{ __html: data?.desc }}
           />
           <div className={styles.comment}>
