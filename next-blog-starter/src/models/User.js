@@ -2,18 +2,13 @@ import mongoose from "mongoose";
 
 const UserSchema = new mongoose.Schema(
   {
-    email: {
-      type: String,
-      required: true,
-      unique: true, // no duplicate users
-    },
-    password: {
-      type: String,
-      required: true,
-    },
+    name: String,
+    email: { type: String, required: true, unique: true },
+    image: String,
+    role: { type: String, enum: ["user", "admin"], default: "user" },
+    provider: { type: String, enum: ["google"], default: "google" },
   },
   { timestamps: true },
 );
 
-// Prevent model overwrite in Next.js (IMPORTANT)
 export default mongoose.models.User || mongoose.model("User", UserSchema);
